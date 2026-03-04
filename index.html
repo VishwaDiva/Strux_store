@@ -196,314 +196,6 @@
   .logo-name em { color: var(--accent); font-style:normal; }
 
 
-  /* ── GYM PAGE ── */
-  .gym-hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%);
-    padding: 80px 0 60px;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 1px solid var(--border);
-  }
-  .gym-hero::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(232,200,122,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .gym-hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .gym-hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(232,200,122,0.1);
-    border: 1px solid rgba(232,200,122,0.25);
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--accent);
-    width: fit-content;
-  }
-  .gym-hero h1 {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 8vw, 96px);
-    letter-spacing: 8px;
-    color: var(--white);
-    line-height: 0.9;
-    text-transform: uppercase;
-  }
-  .gym-hero h1 em { color: var(--accent); font-style: normal; }
-  .gym-hero p {
-    color: var(--muted);
-    font-size: 15px;
-    max-width: 420px;
-    line-height: 1.7;
-  }
-  .gym-hero-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-  }
-  .gym-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-top: 48px;
-    max-width: 500px;
-  }
-  .gym-stat {
-    background: var(--card);
-    padding: 20px;
-    text-align: center;
-  }
-  .gym-stat strong {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 28px;
-    color: var(--accent);
-    letter-spacing: 2px;
-  }
-  .gym-stat span {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 1.5px;
-    font-weight: 600;
-  }
-
-  /* Gym category cards */
-  .gym-cats {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-  }
-  .gym-cat {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 16px;
-    text-align: center;
-    cursor: pointer;
-    transition: var(--trans);
-    text-decoration: none;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .gym-cat:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    background: var(--card2);
-  }
-  .gym-cat-icon {
-    font-size: 28px;
-    line-height: 1;
-  }
-  .gym-cat-img {
-    padding: 0;
-    overflow: hidden;
-    gap: 0;
-  }
-  .gym-cat-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.4s ease;
-    flex-shrink: 0;
-  }
-  .gym-cat-img:hover .gym-cat-thumb { transform: scale(1.07); }
-  .gym-cat-img h4, .gym-cat-img p {
-    padding: 6px 12px 0;
-  }
-  .gym-cat-img p { padding-bottom: 12px; }
-  .gym-cat-active {
-    border-color: var(--accent) !important;
-    background: var(--card2) !important;
-  }
-  .gym-cat-active h4 { color: var(--accent); }
-  .gym-cat h4 {
-    font-family: var(--font-display);
-    font-size: 13px;
-    letter-spacing: 2px;
-    margin: 0;
-  }
-  .gym-cat p {
-    font-size: 11px;
-    color: var(--muted);
-    margin: 0;
-  }
-
-  /* Gym product grid */
-  .gym-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
-  }
-  .gym-product-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: var(--trans);
-    cursor: pointer;
-  }
-  .gym-product-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
-  }
-  .gym-product-img {
-    width: 100%;
-    aspect-ratio: 1;
-    background: var(--card2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 64px;
-    position: relative;
-    overflow: hidden;
-  }
-  .gym-product-img::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4));
-  }
-  .gym-product-body {
-    padding: 14px;
-  }
-  .gym-product-cat {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--accent);
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .gym-product-name {
-    font-family: var(--font-display);
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-  .gym-product-desc {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 12px;
-    line-height: 1.5;
-  }
-  .gym-product-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .gym-product-price {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--white);
-  }
-  .gym-product-price .old {
-    font-size: 12px;
-    color: var(--muted);
-    text-decoration: line-through;
-    font-weight: 400;
-    margin-right: 6px;
-  }
-  .gym-add-btn {
-    background: var(--accent);
-    color: var(--black);
-    border: none;
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: var(--trans);
-    letter-spacing: 0.5px;
-  }
-  .gym-add-btn:hover { background: var(--accent2); }
-
-  /* Features strip */
-  .gym-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-  .gym-feature {
-    background: var(--card);
-    padding: 24px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .gym-feature-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-  }
-  .gym-feature h4 {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--white);
-    margin: 0 0 4px;
-  }
-  .gym-feature p {
-    font-size: 12px;
-    color: var(--muted);
-    margin: 0;
-    line-height: 1.5;
-  }
-
-  /* Gym tabs */
-  .gym-tabs {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-  }
-  .gym-tab {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 8px 18px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: var(--trans);
-    text-transform: uppercase;
-  }
-  .gym-tab.active, .gym-tab:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--black);
-  }
-
   /* ═══════════════════════════════════════
      EMBROIDERY PAGE
   ═══════════════════════════════════════ */
@@ -1644,7 +1336,6 @@
 
   <nav class="nav-links">
     <a href="#" onclick="App.go('men')" id="nl-men" class="men-link">MEN</a>
-    <a href="#" onclick="App.go('gym')" id="nl-gym">GYM</a>
     <a href="#" onclick="App.go('embroidery')" id="nl-embroidery" style="background:linear-gradient(90deg,#e8c87a,#ff6b9d,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700">EMBROIDERY</a>
     <a href="#" onclick="App.go('home')" id="nl-new">New Arrivals</a>
     <a href="#" onclick="App.go('home')" id="nl-sale">Sale</a>
@@ -1700,7 +1391,6 @@
   <nav class="sb-menu">
     <a href="#" onclick="App.go('home');App.toggleSidebar()"><i class="fa-solid fa-house"></i> Home</a>
     <a href="#" onclick="App.go('men');App.toggleSidebar()"><i class="fa-solid fa-shirt"></i> Men's Collection</a>
-    <a href="#" onclick="App.go('gym');App.toggleSidebar()"><i class="fa-solid fa-dumbbell"></i> Gym Wear</a>
     <a href="#" onclick="App.go('embroidery');App.toggleSidebar()"><i class="fa-solid fa-wand-magic-sparkles"></i> Embroidery</a>
     <a href="#" onclick="App.go('home');App.toggleSidebar()"><i class="fa-solid fa-fire"></i> New Arrivals</a>
     <a href="#" onclick="App.go('home');App.toggleSidebar()"><i class="fa-solid fa-tag"></i> Sale & Offers</a>
@@ -1898,103 +1588,6 @@
 
   <!-- ██████ WISHLIST PAGE ██████ -->
 
-  <!-- GYM PAGE -->
-  <div class="page" id="page-gym">
-
-    <!-- Hero -->
-    <div class="gym-hero">
-      <div class="gym-hero-inner">
-        <div class="gym-hero-badge">⚡ NEW COLLECTION</div>
-        <h1>GYM<br><em>WEAR</em></h1>
-        <p>Performance-engineered activewear for the grind. Built for movement, designed to dominate.</p>
-        <div class="gym-hero-actions">
-          <a href="#" class="btn-solid" onclick="document.getElementById('gym-products').scrollIntoView({behavior:'smooth'})">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
-          <a href="#" class="btn-ghost">View Lookbook</a>
-        </div>
-        <div class="gym-stats">
-          <div class="gym-stat"><strong>50+</strong><span>STYLES</span></div>
-          <div class="gym-stat"><strong>4D</strong><span>STRETCH</span></div>
-          <div class="gym-stat"><strong>DRY</span><span>TECH</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div style="max-width:1200px;margin:0 auto;padding:0 24px">
-
-      <!-- Features -->
-      <section class="sec">
-        <div class="gym-features">
-          <div class="gym-feature">
-            <span class="gym-feature-icon">💧</span>
-            <div><h4>MOISTURE WICKING</h4><p>Advanced DryTech fabric keeps you dry during intense sessions</p></div>
-          </div>
-          <div class="gym-feature">
-            <span class="gym-feature-icon">🔀</span>
-            <div><h4>4-WAY STRETCH</h4><p>Unrestricted movement in every direction — squat, sprint, stretch</p></div>
-          </div>
-          <div class="gym-feature">
-            <span class="gym-feature-icon">🌬️</span>
-            <div><h4>BREATHABLE MESH</h4><p>Strategic ventilation zones for maximum airflow and comfort</p></div>
-          </div>
-          <div class="gym-feature">
-            <span class="gym-feature-icon">🛡️</span>
-            <div><h4>ANTI-ODOR</h4><p>Silver-ion technology locks out odour all day long</p></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Categories -->
-      <section class="sec">
-        <div class="sec-head">
-          <h2 class="sec-title">SHOP BY CATEGORY</h2>
-        </div>
-        <div class="gym-cats">
-          <a class="gym-cat gym-cat-img" href="#" onclick="setGymTab('tanks',null,this)">
-            <div class="gym-cat-thumb" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80&fit=crop')"></div>
-            <h4>TANKS</h4>
-            <p>12 Styles</p>
-          </a>
-          <a class="gym-cat gym-cat-img" href="#" onclick="setGymTab('shorts',null,this)">
-            <div class="gym-cat-thumb" style="background-image:url('https://images.unsplash.com/photo-1593765387944-f0ef44d40b07?w=400&q=80&fit=crop')"></div>
-            <h4>SHORTS</h4>
-            <p>16 Styles</p>
-          </a>
-          <a class="gym-cat gym-cat-img" href="#" onclick="setGymTab('tights',null,this)">
-            <div class="gym-cat-thumb" style="background-image:url('https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=400&q=80&fit=crop')"></div>
-            <h4>TIGHTS</h4>
-            <p>10 Styles</p>
-          </a>
-          <a class="gym-cat gym-cat-img" href="#" onclick="setGymTab('hoodies',null,this)">
-            <div class="gym-cat-thumb" style="background-image:url('https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400&q=80&fit=crop')"></div>
-            <h4>HOODIES</h4>
-            <p>8 Styles</p>
-          </a>
-          <a class="gym-cat gym-cat-img gym-cat-all" href="#" onclick="setGymTab('all',null,this)">
-            <div class="gym-cat-thumb" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80&fit=crop')"></div>
-            <h4>ALL GYM</h4>
-            <p>50+ Styles</p>
-          </a>
-        </div>
-      </section>
-
-      <!-- Products -->
-      <section class="sec" id="gym-products">
-        <div class="sec-head">
-          <h2 class="sec-title">GYM COLLECTION</h2>
-          <div class="gym-tabs">
-            <button class="gym-tab active" onclick="setGymTab('all',this)">All</button>
-            <button class="gym-tab" onclick="setGymTab('tanks',this)">Tanks</button>
-            <button class="gym-tab" onclick="setGymTab('shorts',this)">Shorts</button>
-            <button class="gym-tab" onclick="setGymTab('tights',this)">Tights</button>
-            <button class="gym-tab" onclick="setGymTab('hoodies',this)">Hoodies</button>
-          </div>
-        </div>
-        <div class="gym-grid" id="gym-product-grid"></div>
-      </section>
-
-    </div>
-  </div><!-- /page-gym -->
-
   <!-- ============================================================ -->
   <!-- EMBROIDERY PAGE                                               -->
   <!-- ============================================================ -->
@@ -2139,7 +1732,7 @@
             <button class="emb-tab" onclick="setEmbTab('nature',this)">🌿 Nature</button>
           </div>
         </div>
-        <div class="gym-grid" id="emb-product-grid"></div>
+        <div class="emb-grid" id="emb-product-grid"></div>
       </section>
 
       <!-- Custom Order Banner -->
@@ -2673,7 +2266,6 @@
     <div class="footer-col">
       <h4>Men's</h4>
       <ul>
-        <li><a href="#" onclick="App.go('gym')">Gym Wear</a></li>
         <li><a href="#" onclick="App.go('embroidery')">Embroidery</a></li>
         <li><a href="#" onclick="App.goMenTab('tshirts')">T-Shirts</a></li>
         <li><a href="#" onclick="App.goMenTab('shirts')">Shirts</a></li>
@@ -4641,7 +4233,7 @@ const App = {
   // ── PRODUCTS ────────────────────────────────────────────────
   _aGetAllProducts() {
     const result = [];
-    const allCats = {...DATA.products, ...GYM_DATA, ...EMB_DATA};
+    const allCats = {...DATA.products, ...EMB_DATA};
     Object.entries(allCats).forEach(([cat, prods]) => {
       prods.forEach(p => result.push({...p, _cat: cat}));
     });
@@ -5488,84 +5080,6 @@ const App = {
 };
 
 // ================================================================
-// GYM PRODUCTS DATA
-// ================================================================
-const GYM_DATA = {
-  tanks: [
-    { id:'gt1', name:'Pro Muscle Tank',       sub:'Black · S-XXL',   price:699,  old:899,  badge:'HOT',  img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80&fit=crop' },
-    { id:'gt2', name:'Dry-Fit Stringer',      sub:'White · S-XL',    price:599,  old:0,    badge:'NEW',  img:'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500&q=80&fit=crop' },
-    { id:'gt3', name:'Compression Tank',      sub:'Grey · S-XXL',    price:799,  old:999,  badge:'SALE', img:'https://images.unsplash.com/photo-1559839697-7a95c56c0e40?w=500&q=80&fit=crop' },
-    { id:'gt4', name:'Mesh Back Vest',        sub:'Navy · S-XL',     price:749,  old:0,    badge:'',     img:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80&fit=crop' },
-    { id:'gt5', name:'Racerback Tank',        sub:'Olive · XS-XL',   price:649,  old:849,  badge:'SALE', img:'https://images.unsplash.com/photo-1583454155184-870a1f63be7f?w=500&q=80&fit=crop' },
-    { id:'gt6', name:'Gym Stringer Pro',      sub:'Red · S-XXL',     price:549,  old:0,    badge:'',     img:'https://images.unsplash.com/photo-1581009137042-c552e485697a?w=500&q=80&fit=crop' },
-  ],
-  shorts: [
-    { id:'gs1', name:'Athletic Shorts 7"',    sub:'Black · S-XXL',   price:899,  old:1099, badge:'HOT',  img:'https://images.unsplash.com/photo-1593765387944-f0ef44d40b07?w=500&q=80&fit=crop' },
-    { id:'gs2', name:'Training Shorts 5"',    sub:'Grey · S-XL',     price:799,  old:0,    badge:'NEW',  img:'https://images.unsplash.com/photo-1526406915894-7bcd65f60845?w=500&q=80&fit=crop' },
-    { id:'gs3', name:'Compression Shorts',    sub:'Navy · S-XXL',    price:699,  old:899,  badge:'SALE', img:'https://images.unsplash.com/photo-1539185441755-769473a23570?w=500&q=80&fit=crop' },
-    { id:'gs4', name:'Mesh Panel Shorts',     sub:'Olive · S-XL',    price:949,  old:0,    badge:'',     img:'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500&q=80&fit=crop' },
-    { id:'gs5', name:'Flex Shorts 9"',        sub:'White · S-XXL',   price:849,  old:1049, badge:'SALE', img:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500&q=80&fit=crop' },
-    { id:'gs6', name:'Quick-Dry Shorts',      sub:'Charcoal · S-XL', price:749,  old:0,    badge:'',     img:'https://images.unsplash.com/photo-1593765387944-f0ef44d40b07?w=500&q=80&fit=crop' },
-  ],
-  tights: [
-    { id:'gti1',name:'Performance Tights',    sub:'Black · S-XXL',   price:1099, old:1399, badge:'HOT',  img:'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500&q=80&fit=crop' },
-    { id:'gti2',name:'Compression Leggings',  sub:'Grey · XS-XL',    price:999,  old:0,    badge:'NEW',  img:'https://images.unsplash.com/photo-1548285630-fd08e7dfc4c5?w=500&q=80&fit=crop' },
-    { id:'gti3',name:'7/8 Training Tights',   sub:'Navy · S-XL',     price:1199, old:1499, badge:'SALE', img:'https://images.unsplash.com/photo-1615117972428-28de67cda58e?w=500&q=80&fit=crop' },
-    { id:'gti4',name:'Warm-Up Tights',        sub:'Charcoal · S-XXL',price:1299, old:0,    badge:'',     img:'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=500&q=80&fit=crop' },
-    { id:'gti5',name:'Mesh Side Tights',      sub:'Black · S-XL',    price:1149, old:1349, badge:'SALE', img:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500&q=80&fit=crop' },
-  ],
-  hoodies: [
-    { id:'gh1', name:'Gym Pullover Hoodie',   sub:'Black · S-XXL',   price:1499, old:1899, badge:'HOT',  img:'https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=500&q=80&fit=crop' },
-    { id:'gh2', name:'Zip-Up Track Hoodie',   sub:'Grey · S-XL',     price:1699, old:0,    badge:'NEW',  img:'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500&q=80&fit=crop' },
-    { id:'gh3', name:'Oversized Gym Hood',    sub:'Olive · S-XXL',   price:1399, old:1699, badge:'SALE', img:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80&fit=crop' },
-    { id:'gh4', name:'Lightweight Hoodie',    sub:'Navy · S-XL',     price:1249, old:0,    badge:'',     img:'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80&fit=crop' },
-  ],
-  accessories: [
-    { id:'ga1', name:'Gym Duffle Bag',        sub:'Black · One Size', price:1299, old:1599, badge:'HOT',  img:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80&fit=crop' },
-    { id:'ga2', name:'Lifting Gloves',        sub:'Black · S/M/L',   price:499,  old:0,    badge:'NEW',  img:'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&q=80&fit=crop' },
-    { id:'ga3', name:'Resistance Bands Set',  sub:'3-Pack · All',    price:699,  old:899,  badge:'SALE', img:'https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=500&q=80&fit=crop' },
-    { id:'ga4', name:'Shaker Bottle 700ml',   sub:'Black · One Size', price:399,  old:0,    badge:'',     img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80&fit=crop' },
-    { id:'ga5', name:'Gym Headband',          sub:'Black/Grey · Uni', price:199,  old:299,  badge:'SALE', img:'https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae?w=500&q=80&fit=crop' },
-    { id:'ga6', name:'Wrist Wraps',           sub:'Black · One Size', price:349,  old:0,    badge:'NEW',  img:'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500&q=80&fit=crop' },
-  ],
-};
-
-// Merge gym products into DATA.products so addCart/openProduct work natively
-Object.assign(DATA.products, GYM_DATA);
-
-// ================================================================
-// GYM TAB & RENDER
-// ================================================================
-function setGymTab(cat, btn, catCard) {
-  // Highlight tab buttons
-  document.querySelectorAll('.gym-tab').forEach(t=>t.classList.remove('active'));
-  if(btn) { btn.classList.add('active'); }
-  else {
-    document.querySelectorAll('.gym-tab').forEach(t=>{
-      if(t.textContent.toLowerCase()===cat || (cat==='all' && t.textContent==='All')) t.classList.add('active');
-    });
-  }
-
-  // Highlight category cards
-  document.querySelectorAll('.gym-cat').forEach(c=>c.classList.remove('gym-cat-active'));
-  if(catCard) catCard.classList.add('gym-cat-active');
-
-  // Get products for this tab
-  const allGym = Object.entries(GYM_DATA);
-  const products = cat==='all'
-    ? allGym.flatMap(([,arr])=>arr)
-    : (GYM_DATA[cat]||[]);
-
-  // Render using the standard prodCardHTML
-  const grid = document.getElementById('gym-product-grid');
-  if(grid) grid.innerHTML = products.map(p=>prodCardHTML(p)).join('');
-
-  // Scroll to products section
-  setTimeout(()=>{ document.getElementById('gym-products')?.scrollIntoView({behavior:'smooth',block:'start'}); }, 80);
-  return false;
-}
-
-// ================================================================
 // EMBROIDERY PRODUCTS DATA
 // ================================================================
 const EMB_DATA = {
@@ -5630,7 +5144,6 @@ function setEmbTab(cat, btn, catCard) {
 // Boot
 document.addEventListener('DOMContentLoaded', () => {
   App.init();
-  setGymTab('all');
   setEmbTab('all');
 });
 </script>
