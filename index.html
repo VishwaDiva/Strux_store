@@ -1381,6 +1381,411 @@
     .hero-ctas { flex-direction:column; }
   }
 
+
+  /* ================================================================
+     ADMIN PANEL STYLES
+  ================================================================ */
+
+  /* Page shell */
+  #page-admin { background: var(--black); min-height: 100vh; }
+
+  /* Login screen */
+  .adm-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,200,122,0.07) 0%, transparent 60%), var(--black);
+    padding: 24px;
+  }
+  .adm-login-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  .adm-login-logo {
+    font-family: var(--font-display);
+    font-size: 36px;
+    letter-spacing: 6px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .adm-login-logo em { color: var(--accent); font-style: normal; }
+  .adm-login-sub {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .adm-input {
+    width: 100%;
+    background: var(--card2);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 13px 16px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: border-color var(--trans);
+  }
+  .adm-input:focus { border-color: var(--accent); outline: none; }
+  .adm-login-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: var(--black);
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: opacity var(--trans);
+  }
+  .adm-login-btn:hover { opacity: 0.88; }
+  .adm-hint {
+    font-size: 11px;
+    color: var(--muted2);
+    margin-top: 18px;
+  }
+  .adm-hint strong { color: var(--muted); }
+
+  /* Admin shell */
+  #admShell {
+    display: none;
+    min-height: 100vh;
+  }
+  #admShell.active { display: flex; }
+
+  /* Sidebar */
+  .adm-sidebar {
+    width: 230px;
+    flex-shrink: 0;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  .adm-sidebar-brand {
+    padding: 22px 20px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .adm-brand-icon {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900; color: var(--black);
+    font-family: var(--font-display);
+    flex-shrink: 0;
+  }
+  .adm-brand-text { font-size: 13px; font-weight: 700; color: var(--white); }
+  .adm-brand-role { font-size: 10px; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; }
+
+  .adm-nav { flex: 1; padding: 14px 10px; }
+  .adm-nav-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted2);
+    text-transform: uppercase;
+    padding: 8px 10px 4px;
+    display: block;
+  }
+  .adm-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 12px;
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--trans);
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2px;
+  }
+  .adm-nav-item i { width: 16px; text-align: center; font-size: 13px; flex-shrink: 0; }
+  .adm-nav-item:hover { background: rgba(255,255,255,0.04); color: var(--white); }
+  .adm-nav-item.active { background: rgba(232,200,122,0.12); color: var(--accent); }
+  .adm-nav-item.active i { color: var(--accent); }
+  .adm-nav-divider { height: 1px; background: var(--border); margin: 10px 0; }
+
+  .adm-sidebar-foot {
+    padding: 14px 10px;
+    border-top: 1px solid var(--border);
+  }
+  .adm-logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #e74c3c;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--trans);
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+  .adm-logout-btn:hover { background: rgba(231,76,60,0.08); }
+
+  /* Main area */
+  .adm-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .adm-topbar {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 0 28px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .adm-topbar-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+  .adm-topbar-right { display: flex; align-items: center; gap: 12px; }
+  .adm-avatar {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--black);
+    cursor: default;
+  }
+
+  /* Content panels */
+  .adm-content { padding: 28px; flex: 1; }
+  .adm-panel { display: none; }
+  .adm-panel.active { display: block; animation: pageFade 0.25s ease forwards; }
+
+  /* Stat cards */
+  .adm-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .adm-stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .adm-stat::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--adm-accent, var(--accent));
+    border-radius: 12px 12px 0 0;
+  }
+  .adm-stat-icon {
+    font-size: 20px;
+    color: var(--adm-accent, var(--accent));
+    margin-bottom: 10px;
+  }
+  .adm-stat-val {
+    font-family: var(--font-display);
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .adm-stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Section headers */
+  .adm-sec-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .adm-sec-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--white);
+  }
+
+  /* Tables */
+  .adm-table-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .adm-table { width: 100%; border-collapse: collapse; }
+  .adm-table th {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    padding: 12px 16px;
+    text-align: left;
+    background: var(--card2);
+    border-bottom: 1px solid var(--border);
+  }
+  .adm-table td {
+    padding: 13px 16px;
+    font-size: 13px;
+    color: var(--white);
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .adm-table tr:last-child td { border-bottom: none; }
+  .adm-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .adm-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .adm-badge.green { background: rgba(0,200,83,0.12); color: #00c853; }
+  .adm-badge.yellow { background: rgba(232,200,122,0.12); color: var(--accent); }
+  .adm-badge.red { background: rgba(231,76,60,0.12); color: #e74c3c; }
+  .adm-badge.blue { background: rgba(59,130,246,0.12); color: #3b82f6; }
+  .adm-badge.gray { background: rgba(120,120,120,0.12); color: var(--muted); }
+
+  /* Search/filter bar */
+  .adm-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .adm-search {
+    flex: 1;
+    min-width: 200px;
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    padding: 9px 14px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 13px;
+    transition: border-color var(--trans);
+  }
+  .adm-search:focus { border-color: var(--accent); outline: none; }
+  .adm-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: none;
+    transition: opacity var(--trans);
+    font-family: var(--font-body);
+  }
+  .adm-btn:hover { opacity: 0.85; }
+  .adm-btn.gold { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: var(--black); }
+  .adm-btn.outline { background: var(--card2); border: 1px solid var(--border2); color: var(--white); }
+  .adm-btn.danger { background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.3); color: #e74c3c; }
+
+  /* Empty state */
+  .adm-empty {
+    text-align: center;
+    padding: 52px 20px;
+    color: var(--muted);
+  }
+  .adm-empty i { font-size: 40px; margin-bottom: 12px; display: block; opacity: 0.4; }
+  .adm-empty p { font-size: 13px; }
+
+  /* Report charts */
+  .adm-chart-bar { height: 10px; background: var(--card2); border-radius: 5px; overflow: hidden; flex: 1; }
+  .adm-chart-fill { height: 100%; border-radius: 5px; background: linear-gradient(90deg, var(--accent2), var(--accent)); }
+  .adm-report-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .adm-report-label { font-size: 12px; color: var(--muted); width: 120px; text-align: right; flex-shrink: 0; }
+  .adm-report-val { font-size: 12px; font-weight: 700; color: var(--white); flex-shrink: 0; width: 60px; text-align: right; }
+
+  /* Cards grid */
+  .adm-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .adm-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .adm-card-title { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 14px; }
+
+  /* Toast */
+  #admToast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--card2);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 12px 20px;
+    font-size: 13px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  #admToast.show { transform: translateY(0); opacity: 1; }
+
+  @media (max-width: 900px) {
+    .adm-stats { grid-template-columns: repeat(2, 1fr); }
+    .adm-cards { grid-template-columns: 1fr; }
+    .adm-sidebar { width: 200px; }
+  }
+  @media (max-width: 640px) {
+    .adm-sidebar { display: none; }
+    .adm-content { padding: 16px; }
+    .adm-stats { grid-template-columns: 1fr 1fr; }
+  }
+
   </style>
 </head>
 <body>
@@ -1463,6 +1868,7 @@
     <a href="#" onclick="App.go('cart');App.toggleSidebar()"><i class="fa-solid fa-bag-shopping"></i> Cart <span id="sbCartCount" style="margin-left:auto;font-size:11px;color:var(--accent)"></span></a>
     <div class="sb-divider"></div>
     <a href="#" onclick="App.openAuth('login');App.toggleSidebar()"><i class="fa-regular fa-user"></i> Login / Register</a>
+    <a href="#" onclick="App.go('admin');App.toggleSidebar()"><i class="fa-solid fa-gauge-high"></i> Admin Panel</a>
     <a href="https://www.instagram.com/vishwadiva" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
   </nav>
   <div class="sb-foot">© 2025 STRUX · Vishwa Diva</div>
@@ -1887,6 +2293,209 @@
     </div>
   </div>
 
+  <!-- ██████ ADMIN PANEL PAGE ██████ -->
+  <div class="page" id="page-admin">
+
+  <!-- Login Screen -->
+  <div id="admLoginScreen" class="adm-login">
+    <div class="adm-login-box">
+      <div class="adm-login-logo">STRU<em>X</em></div>
+      <div class="adm-login-sub">Admin Portal</div>
+      <input class="adm-input" id="admUser" type="text" placeholder="Username" autocomplete="off" onkeydown="if(event.key==='Enter')AdminPanel.login()"/>
+      <input class="adm-input" id="admPass" type="password" placeholder="Password" onkeydown="if(event.key==='Enter')AdminPanel.login()"/>
+      <button class="adm-login-btn" onclick="AdminPanel.login()">LOGIN</button>
+      <p class="adm-hint">Default: <strong>admin</strong> / <strong>strux2025</strong></p>
+    </div>
+  </div>
+
+  <!-- Admin Shell -->
+  <div id="admShell">
+
+    <!-- Sidebar -->
+    <aside class="adm-sidebar">
+      <div class="adm-sidebar-brand">
+        <div class="adm-brand-icon">S</div>
+        <div>
+          <div class="adm-brand-text">STRUX</div>
+          <div class="adm-brand-role">Admin Panel</div>
+        </div>
+      </div>
+
+      <nav class="adm-nav">
+        <span class="adm-nav-label">Main</span>
+        <button class="adm-nav-item active" id="anav-dashboard" onclick="AdminPanel.showPanel('dashboard')">
+          <i class="fa-solid fa-gauge-high"></i> Dashboard
+        </button>
+        <button class="adm-nav-item" id="anav-orders" onclick="AdminPanel.showPanel('orders')">
+          <i class="fa-solid fa-bag-shopping"></i> Orders
+        </button>
+        <button class="adm-nav-item" id="anav-products" onclick="AdminPanel.showPanel('products')">
+          <i class="fa-solid fa-shirt"></i> Products
+        </button>
+        <button class="adm-nav-item" id="anav-customers" onclick="AdminPanel.showPanel('customers')">
+          <i class="fa-solid fa-users"></i> Customers
+        </button>
+        <div class="adm-nav-divider"></div>
+        <span class="adm-nav-label">Finance</span>
+        <button class="adm-nav-item" id="anav-payments" onclick="AdminPanel.showPanel('payments')">
+          <i class="fa-solid fa-indian-rupee-sign"></i> Payments
+        </button>
+        <button class="adm-nav-item" id="anav-reports" onclick="AdminPanel.showPanel('reports')">
+          <i class="fa-solid fa-chart-bar"></i> Reports
+        </button>
+      </nav>
+
+      <div class="adm-sidebar-foot">
+        <button class="adm-logout-btn" onclick="AdminPanel.logout()">
+          <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="adm-main">
+      <div class="adm-topbar">
+        <div class="adm-topbar-title" id="admTopTitle">DASHBOARD</div>
+        <div class="adm-topbar-right">
+          <div style="font-size:12px;color:var(--muted)" id="admClock"></div>
+          <div class="adm-avatar" title="Admin">A</div>
+        </div>
+      </div>
+
+      <div class="adm-content">
+
+        <!-- ── Dashboard Panel ── -->
+        <div class="adm-panel active" id="apanel-dashboard">
+          <div class="adm-stats" id="admDashStats">
+            <div class="adm-stat" style="--adm-accent:#e8c87a">
+              <div class="adm-stat-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+              <div class="adm-stat-val" id="ds-orders">0</div>
+              <div class="adm-stat-label">Total Orders</div>
+            </div>
+            <div class="adm-stat" style="--adm-accent:#00c853">
+              <div class="adm-stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div class="adm-stat-val" id="ds-revenue">₹0</div>
+              <div class="adm-stat-label">Revenue</div>
+            </div>
+            <div class="adm-stat" style="--adm-accent:#3b82f6">
+              <div class="adm-stat-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="adm-stat-val" id="ds-customers">0</div>
+              <div class="adm-stat-label">Customers</div>
+            </div>
+            <div class="adm-stat" style="--adm-accent:#9b59b6">
+              <div class="adm-stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="adm-stat-val" id="ds-avg">₹0</div>
+              <div class="adm-stat-label">Avg Order</div>
+            </div>
+          </div>
+          <div class="adm-cards">
+            <div class="adm-card">
+              <div class="adm-card-title">Recent Orders</div>
+              <div id="admRecentOrders"><div class="adm-empty"><i class="fa-solid fa-bag-shopping"></i><p>No orders yet</p></div></div>
+            </div>
+            <div class="adm-card">
+              <div class="adm-card-title">Top Products</div>
+              <div id="admTopProducts"><div class="adm-empty"><i class="fa-solid fa-shirt"></i><p>No data yet</p></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Orders Panel ── -->
+        <div class="adm-panel" id="apanel-orders">
+          <div class="adm-bar">
+            <input class="adm-search" id="aordSearch" placeholder="Search by ID, name, phone…" oninput="AdminPanel.filterOrders()"/>
+            <select class="adm-search" style="flex:0 0 140px" id="aordStatus" onchange="AdminPanel.filterOrders()">
+              <option value="">All Status</option>
+              <option>Confirmed</option>
+              <option>Processing</option>
+              <option>Shipped</option>
+              <option>Delivered</option>
+              <option>Cancelled</option>
+            </select>
+            <button class="adm-btn gold" onclick="AdminPanel.exportCSV()"><i class="fa-solid fa-download"></i> Export CSV</button>
+          </div>
+          <div class="adm-table-wrap">
+            <table class="adm-table">
+              <thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Total</th><th>Status</th><th>Date</th></tr></thead>
+              <tbody id="aordBody"><tr><td colspan="6"><div class="adm-empty"><i class="fa-solid fa-bag-shopping"></i><p>No orders yet</p></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── Products Panel ── -->
+        <div class="adm-panel" id="apanel-products">
+          <div class="adm-bar">
+            <input class="adm-search" id="aprodSearch" placeholder="Search products…" oninput="AdminPanel.filterProducts()"/>
+            <select class="adm-search" style="flex:0 0 140px" id="aprodCat" onchange="AdminPanel.filterProducts()">
+              <option value="">All Categories</option>
+              <option>T-Shirts</option><option>Shirts</option><option>Polos</option>
+              <option>Jeans</option><option>Pants</option><option>Joggers</option>
+              <option>Winter Wear</option><option>Embroidery</option>
+            </select>
+          </div>
+          <div class="adm-table-wrap">
+            <table class="adm-table">
+              <thead><tr><th>Product</th><th>Category</th><th>Price</th><th>MRP</th><th>Badge</th></tr></thead>
+              <tbody id="aprodBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── Customers Panel ── -->
+        <div class="adm-panel" id="apanel-customers">
+          <div class="adm-bar">
+            <input class="adm-search" id="acustSearch" placeholder="Search by name, phone, email…" oninput="AdminPanel.filterCustomers()"/>
+          </div>
+          <div class="adm-table-wrap">
+            <table class="adm-table">
+              <thead><tr><th>Customer</th><th>Phone</th><th>Orders</th><th>Spent</th><th>Last Order</th></tr></thead>
+              <tbody id="acustBody"><tr><td colspan="5"><div class="adm-empty"><i class="fa-solid fa-users"></i><p>No customers yet</p></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── Payments Panel ── -->
+        <div class="adm-panel" id="apanel-payments">
+          <div class="adm-bar">
+            <input class="adm-search" id="apaySearch" placeholder="Search payments…" oninput="AdminPanel.filterPayments()"/>
+            <select class="adm-search" style="flex:0 0 140px" id="apayMethod" onchange="AdminPanel.filterPayments()">
+              <option value="">All Methods</option>
+              <option>UPI</option><option>Card</option><option>COD</option><option>Razorpay</option>
+            </select>
+          </div>
+          <div class="adm-table-wrap">
+            <table class="adm-table">
+              <thead><tr><th>Payment ID</th><th>Order ID</th><th>Customer</th><th>Method</th><th>Amount</th><th>Status</th></tr></thead>
+              <tbody id="apayBody"><tr><td colspan="6"><div class="adm-empty"><i class="fa-solid fa-indian-rupee-sign"></i><p>No payments yet</p></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── Reports Panel ── -->
+        <div class="adm-panel" id="apanel-reports">
+          <div class="adm-cards">
+            <div class="adm-card">
+              <div class="adm-card-title">Revenue by Status</div>
+              <div id="arptStatus"><div class="adm-empty"><i class="fa-solid fa-chart-bar"></i><p>No data</p></div></div>
+            </div>
+            <div class="adm-card">
+              <div class="adm-card-title">Top Selling Items</div>
+              <div id="arptItems"><div class="adm-empty"><i class="fa-solid fa-shirt"></i><p>No data</p></div></div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="adm-btn gold" onclick="AdminPanel.exportCSV()"><i class="fa-solid fa-file-csv"></i> Export Orders CSV</button>
+            <button class="adm-btn outline" onclick="AdminPanel.exportJSON()"><i class="fa-solid fa-file-code"></i> Export JSON</button>
+          </div>
+        </div>
+
+      </div><!-- /adm-content -->
+    </div><!-- /adm-main -->
+  </div><!-- /admShell -->
+
+  </div><!-- /page-admin -->
+
+
 <!-- ================================================================
      FOOTER
 ================================================================ -->
@@ -1936,6 +2545,7 @@
         <li><a href="#" onclick="App.openCompany('privacy')">Privacy Policy</a></li>
         <li><a href="#" onclick="App.openCompany('terms')">Terms of Service</a></li>
         <li><a href="https://www.instagram.com/vishwadiva" target="_blank">Instagram</a></li>
+        <li><a href="#" onclick="App.go('admin')">Admin Panel</a></li>
       </ul>
     </div>
   </div>
@@ -3998,11 +4608,281 @@ function getAllProducts() {
 }
 
 
+
+
+// ════════════════════════════════════════════════════════
+// ADMIN PANEL CONTROLLER
+// ════════════════════════════════════════════════════════
+const AdminPanel = {
+  _loggedIn: false,
+  _orders: [],
+  _clockTimer: null,
+  _toastTimer: null,
+  _USERS: { admin: 'strux2025', owner: 'strux@admin' },
+
+  // ── Boot ──────────────────────────────────────────────
+  init() {
+    this._orders = JSON.parse(localStorage.getItem('strux_orders') || '[]');
+    if (this._loggedIn) {
+      document.getElementById('admLoginScreen').style.display = 'none';
+      document.getElementById('admShell').classList.add('active');
+      this._startClock();
+      this.refreshAll();
+    } else {
+      document.getElementById('admLoginScreen').style.display = '';
+      document.getElementById('admShell').classList.remove('active');
+      setTimeout(() => document.getElementById('admUser')?.focus(), 80);
+    }
+  },
+
+  // ── Auth ──────────────────────────────────────────────
+  login() {
+    const u = (document.getElementById('admUser')?.value || '').trim();
+    const p = document.getElementById('admPass')?.value || '';
+    if (this._USERS[u] && this._USERS[u] === p) {
+      this._loggedIn = true;
+      document.getElementById('admLoginScreen').style.display = 'none';
+      document.getElementById('admShell').classList.add('active');
+      this._startClock();
+      this.refreshAll();
+      this.toast('Welcome back, ' + u + ' ✓');
+    } else {
+      this.toast('Invalid credentials', 'xmark');
+      document.getElementById('admPass').value = '';
+    }
+  },
+
+  logout() {
+    this._loggedIn = false;
+    clearInterval(this._clockTimer);
+    document.getElementById('admShell').classList.remove('active');
+    document.getElementById('admLoginScreen').style.display = '';
+    document.getElementById('admUser').value = '';
+    document.getElementById('admPass').value = '';
+    setTimeout(() => document.getElementById('admUser')?.focus(), 80);
+  },
+
+  // ── Clock ─────────────────────────────────────────────
+  _startClock() {
+    const tick = () => {
+      const el = document.getElementById('admClock');
+      if (el) el.textContent = new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    };
+    tick();
+    this._clockTimer = setInterval(tick, 1000);
+  },
+
+  // ── Panel switching ───────────────────────────────────
+  showPanel(name) {
+    document.querySelectorAll('.adm-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.adm-nav-item').forEach(b => b.classList.remove('active'));
+    const panel = document.getElementById('apanel-' + name);
+    const nav = document.getElementById('anav-' + name);
+    if (panel) panel.classList.add('active');
+    if (nav) nav.classList.add('active');
+    const titles = { dashboard: 'DASHBOARD', orders: 'ORDERS', products: 'PRODUCTS', customers: 'CUSTOMERS', payments: 'PAYMENTS', reports: 'REPORTS' };
+    const t = document.getElementById('admTopTitle');
+    if (t) t.textContent = titles[name] || name.toUpperCase();
+    this._orders = JSON.parse(localStorage.getItem('strux_orders') || '[]');
+    if (name === 'dashboard') this._renderDashboard();
+    if (name === 'orders') this.filterOrders();
+    if (name === 'products') this._renderProducts();
+    if (name === 'customers') this._renderCustomers();
+    if (name === 'payments') this._renderPayments();
+    if (name === 'reports') this._renderReports();
+  },
+
+  refreshAll() {
+    this._orders = JSON.parse(localStorage.getItem('strux_orders') || '[]');
+    this._renderDashboard();
+    this._renderProducts();
+  },
+
+  // ── Status color helper ───────────────────────────────
+  _sc(s) {
+    const m = { Delivered: 'green', Shipped: 'blue', Processing: 'yellow', Confirmed: 'yellow', Cancelled: 'red', Pending: 'gray' };
+    return m[s] || 'gray';
+  },
+
+  // ── Dashboard ─────────────────────────────────────────
+  _renderDashboard() {
+    const o = this._orders;
+    const rev = o.reduce((s, x) => s + (x.total || 0), 0);
+    const custSet = new Set(o.map(x => x.customer?.phone || x.customer?.name || '').filter(Boolean));
+    const avg = o.length ? Math.round(rev / o.length) : 0;
+    const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    set('ds-orders', o.length);
+    set('ds-revenue', '₹' + rev.toLocaleString('en-IN'));
+    set('ds-customers', custSet.size);
+    set('ds-avg', '₹' + avg.toLocaleString('en-IN'));
+
+    // Recent orders
+    const ro = document.getElementById('admRecentOrders');
+    if (ro) ro.innerHTML = !o.length ? '<div class="adm-empty"><i class="fa-solid fa-bag-shopping"></i><p>No orders yet</p></div>' :
+      o.slice(0, 6).map(x => `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)"><div><div style="font-size:12px;font-weight:600">${x.id}</div><div style="font-size:11px;color:var(--muted)">${x.customer?.name || '—'}</div></div><div style="text-align:right"><span class="adm-badge ${this._sc(x.status)}">${x.status}</span><div style="font-size:12px;font-family:var(--font-display);color:var(--accent);margin-top:3px">₹${(x.total||0).toLocaleString('en-IN')}</div></div></div>`).join('');
+
+    // Top products
+    const itemMap = {};
+    o.forEach(x => (x.items||[]).forEach(i => { itemMap[i.name||'?'] = (itemMap[i.name||'?']||0) + (i.qty||1); }));
+    const sorted = Object.entries(itemMap).sort((a,b)=>b[1]-a[1]).slice(0,6);
+    const tp = document.getElementById('admTopProducts');
+    if (tp) tp.innerHTML = !sorted.length ? '<div class="adm-empty"><i class="fa-solid fa-shirt"></i><p>No data yet</p></div>' :
+      sorted.map(([n,q]) => `<div class="adm-report-row"><div class="adm-report-label">${n}</div><div class="adm-chart-bar"><div class="adm-chart-fill" style="width:${Math.round(q/sorted[0][1]*100)}%"></div></div><div class="adm-report-val">${q} sold</div></div>`).join('');
+  },
+
+  // ── Orders ────────────────────────────────────────────
+  filterOrders() {
+    const q = (document.getElementById('aordSearch')?.value || '').toLowerCase();
+    const st = document.getElementById('aordStatus')?.value || '';
+    const list = this._orders.filter(o =>
+      (!q || (o.id||'').toLowerCase().includes(q) || (o.customer?.name||'').toLowerCase().includes(q) || (o.customer?.phone||'').includes(q)) &&
+      (!st || o.status === st)
+    );
+    const tb = document.getElementById('aordBody');
+    if (!tb) return;
+    tb.innerHTML = !list.length ? `<tr><td colspan="6"><div class="adm-empty"><i class="fa-solid fa-bag-shopping"></i><p>No orders found</p></div></td></tr>` :
+      list.map(o => {
+        const d = new Date(o.timestamp).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: '2-digit' });
+        const items = (o.items||[]).map(i=>`${i.name||'?'} ×${i.qty||1}`).join(', ');
+        return `<tr><td style="font-family:var(--font-display);font-size:12px;color:var(--accent)">${o.id}</td><td><div style="font-weight:600;font-size:13px">${o.customer?.name||'—'}</div><div style="font-size:11px;color:var(--muted)">${o.customer?.phone||''}</div></td><td style="max-width:200px;font-size:12px;color:var(--muted)">${items||'—'}</td><td style="font-family:var(--font-display);color:var(--accent)">₹${(o.total||0).toLocaleString('en-IN')}</td><td><span class="adm-badge ${this._sc(o.status)}">${o.status}</span></td><td style="font-size:12px;color:var(--muted)">${d}</td></tr>`;
+      }).join('');
+  },
+
+  // ── Products ──────────────────────────────────────────
+  _renderProducts() {
+    const prods = typeof getAllProducts === 'function' ? getAllProducts() : [];
+    const q = (document.getElementById('aprodSearch')?.value || '').toLowerCase();
+    const cat = document.getElementById('aprodCat')?.value || '';
+    const list = prods.filter(p =>
+      (!q || (p.name||'').toLowerCase().includes(q)) &&
+      (!cat || (p._cat||p.sub||'').toLowerCase().includes(cat.toLowerCase()))
+    );
+    const tb = document.getElementById('aprodBody');
+    if (!tb) return;
+    tb.innerHTML = !list.length ? `<tr><td colspan="5"><div class="adm-empty"><i class="fa-solid fa-shirt"></i><p>No products found</p></div></td></tr>` :
+      list.map(p => `<tr><td style="font-weight:600">${p.name||'—'}</td><td style="font-size:12px;color:var(--muted)">${p._cat||p.sub||'—'}</td><td style="font-family:var(--font-display);color:var(--accent)">₹${(p.price||0).toLocaleString('en-IN')}</td><td style="font-size:12px;color:var(--muted);text-decoration:line-through">${p.old?'₹'+p.old.toLocaleString('en-IN'):'—'}</td><td>${p.badge?`<span class="adm-badge yellow">${p.badge}</span>`:'—'}</td></tr>`).join('');
+  },
+
+  filterProducts() { this._renderProducts(); },
+
+  // ── Customers ─────────────────────────────────────────
+  _renderCustomers() {
+    const q = (document.getElementById('acustSearch')?.value || '').toLowerCase();
+    const custMap = {};
+    this._orders.forEach(o => {
+      const k = o.customer?.phone || o.customer?.name || 'Unknown';
+      if (!custMap[k]) custMap[k] = { name: o.customer?.name||'Unknown', phone: o.customer?.phone||'—', email: o.customer?.email||'—', orders: 0, spend: 0, last: 0 };
+      custMap[k].orders++;
+      custMap[k].spend += o.total || 0;
+      if ((o.timestamp||0) > custMap[k].last) custMap[k].last = o.timestamp;
+    });
+    const list = Object.values(custMap).filter(c =>
+      !q || c.name.toLowerCase().includes(q) || c.phone.includes(q) || c.email.toLowerCase().includes(q)
+    );
+    const tb = document.getElementById('acustBody');
+    if (!tb) return;
+    tb.innerHTML = !list.length ? `<tr><td colspan="5"><div class="adm-empty"><i class="fa-solid fa-users"></i><p>No customers found</p></div></td></tr>` :
+      list.map(c => {
+        const d = c.last ? new Date(c.last).toLocaleDateString('en-IN', { day:'2-digit', month:'short', year:'2-digit' }) : '—';
+        return `<tr><td><div style="font-weight:600">${c.name}</div><div style="font-size:11px;color:var(--muted)">${c.email!=='—'?c.email:''}</div></td><td style="font-size:13px">${c.phone}</td><td>${c.orders}</td><td style="font-family:var(--font-display);color:var(--accent)">₹${c.spend.toLocaleString('en-IN')}</td><td style="font-size:12px;color:var(--muted)">${d}</td></tr>`;
+      }).join('');
+  },
+
+  filterCustomers() { this._renderCustomers(); },
+
+  // ── Payments ──────────────────────────────────────────
+  _renderPayments() {
+    const q = (document.getElementById('apaySearch')?.value || '').toLowerCase();
+    const mf = document.getElementById('apayMethod')?.value || '';
+    const list = this._orders.filter(o =>
+      (!q || (o.id||'').toLowerCase().includes(q) || (o.customer?.name||'').toLowerCase().includes(q)) &&
+      (!mf || (o.payMethod||'').toLowerCase().includes(mf.toLowerCase()))
+    );
+    const tb = document.getElementById('apayBody');
+    if (!tb) return;
+    tb.innerHTML = !list.length ? `<tr><td colspan="6"><div class="adm-empty"><i class="fa-solid fa-indian-rupee-sign"></i><p>No payments found</p></div></td></tr>` :
+      list.map((o, i) => {
+        const pid = 'PAY-' + String(i+1).padStart(4,'0');
+        const paid = o.status !== 'Cancelled' && o.payMethod !== 'COD';
+        return `<tr><td style="font-family:var(--font-display);font-size:12px;color:var(--muted)">${pid}</td><td style="font-family:var(--font-display);font-size:12px;color:var(--accent)">${o.id}</td><td style="font-weight:600">${o.customer?.name||'—'}</td><td style="font-size:12px">${o.payMethod||'—'}</td><td style="font-family:var(--font-display);color:var(--accent)">₹${(o.total||0).toLocaleString('en-IN')}</td><td><span class="adm-badge ${paid?'green':'yellow'}">${paid?'Paid':'Pending'}</span></td></tr>`;
+      }).join('');
+  },
+
+  filterPayments() { this._renderPayments(); },
+
+  // ── Reports ───────────────────────────────────────────
+  _renderReports() {
+    const o = this._orders;
+    // Status breakdown
+    const sm = {};
+    o.forEach(x => { sm[x.status] = (sm[x.status]||0)+1; });
+    const tot = o.length || 1;
+    const rs = document.getElementById('arptStatus');
+    if (rs) rs.innerHTML = !o.length ? '<div class="adm-empty"><i class="fa-solid fa-chart-bar"></i><p>No data</p></div>' :
+      Object.entries(sm).sort((a,b)=>b[1]-a[1]).map(([s,c])=>`<div class="adm-report-row"><div class="adm-report-label">${s}</div><div class="adm-chart-bar"><div class="adm-chart-fill" style="width:${Math.round(c/tot*100)}%"></div></div><div class="adm-report-val">${c} (${Math.round(c/tot*100)}%)</div></div>`).join('');
+    // Items
+    const im = {};
+    o.forEach(x => (x.items||[]).forEach(i => { im[i.name||'?'] = (im[i.name||'?']||0)+(i.qty||1); }));
+    const items = Object.entries(im).sort((a,b)=>b[1]-a[1]).slice(0,10);
+    const ri = document.getElementById('arptItems');
+    if (ri) ri.innerHTML = !items.length ? '<div class="adm-empty"><i class="fa-solid fa-shirt"></i><p>No data</p></div>' :
+      items.map(([n,q])=>`<div class="adm-report-row"><div class="adm-report-label">${n}</div><div class="adm-chart-bar"><div class="adm-chart-fill" style="width:${Math.round(q/items[0][1]*100)}%"></div></div><div class="adm-report-val">${q} sold</div></div>`).join('');
+  },
+
+  // ── Exports ───────────────────────────────────────────
+  exportCSV() {
+    if (!this._orders.length) { this.toast('No orders to export', 'xmark'); return; }
+    const hdr = ['Order ID','Customer','Phone','Email','Items','Total','Method','Status','Date'];
+    const rows = this._orders.map(o => [
+      o.id, o.customer?.name||'', o.customer?.phone||'', o.customer?.email||'',
+      `"${(o.items||[]).map(i=>`${i.name}×${i.qty}`).join(', ')}"`,
+      o.total||0, o.payMethod||'', o.status,
+      new Date(o.timestamp).toLocaleDateString('en-IN')
+    ]);
+    const csv = [hdr, ...rows].map(r=>r.join(',')).join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+    a.download = `strux-orders-${new Date().toISOString().slice(0,10)}.csv`;
+    a.click();
+    this.toast('Exported as CSV ✓');
+  },
+
+  exportJSON() {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(this._orders,null,2)], {type:'application/json'}));
+    a.download = `strux-orders-${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+    this.toast('Exported as JSON ✓');
+  },
+
+  // ── Toast ─────────────────────────────────────────────
+  toast(msg, icon='check') {
+    let t = document.getElementById('admToast');
+    if (!t) {
+      t = document.createElement('div'); t.id = 'admToast';
+      t.innerHTML = '<i id="admToastIcon" class="fa-solid fa-check"></i><span id="admToastMsg"></span>';
+      document.body.appendChild(t);
+    }
+    const ic = document.getElementById('admToastIcon');
+    const mg = document.getElementById('admToastMsg');
+    if (ic) { ic.className = `fa-solid fa-${icon}`; ic.style.color = icon==='xmark'?'#e74c3c':'#00c853'; }
+    if (mg) mg.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+  },
+};
+
+// Expose renderAdmin for App.go routing
+if (typeof App !== 'undefined') {
+  App._origGo = App.go;
+  App.go = function(page) {
+    App._origGo.call(App, page);
+    if (page === 'admin') AdminPanel.init();
+  };
+}
+
 </script>
 
 </body>
 </html>
-
-
-
-
